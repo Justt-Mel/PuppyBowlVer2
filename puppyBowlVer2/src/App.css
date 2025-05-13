@@ -1,0 +1,11 @@
+body{
+    background-color: blanchedalmond;
+}
+.Nav{
+    
+    border: solid black 3px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #069c63;
+    padding: 1rem;
+}

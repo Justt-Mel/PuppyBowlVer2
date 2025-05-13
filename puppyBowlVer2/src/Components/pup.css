@@ -1,0 +1,42 @@
+.PupsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    border: 3px solid black;
+    background-color: indigo;
+}
+.PupsContainer >.pupObjects{
+    border: 3px solid black;
+    padding: 1rem;
+    margin: 1rem;
+    background-color: maroon;
+}
+.pupObjects > img{
+    height: 200px;
+    width: 250px;
+}
+.SinglePupContainer{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+.SinglePupContainer > .SinglePup{
+    border: 3px solid black;
+    padding: 10rem;
+    background-color: maroon;
+}
+.header > h1{
+    color: brown;
+    text-align: center;
+    font-size: 2rem;
+}
+.header > h2{
+    color: brown;
+    text-align: center;
+    font-size: 2rem;
+}
+.PupForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
