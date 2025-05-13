@@ -1,6 +1,5 @@
 import './pup.css'
 import { Link } from "react-router-dom"
-import searchPuppy from './SearchPuppy'
 import axios from 'axios'
 
 function AllPuppies({allPuppies ,setAllPuppies}){

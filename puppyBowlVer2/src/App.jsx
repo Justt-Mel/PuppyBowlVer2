@@ -30,7 +30,7 @@ function App() {
   return (
       <div>
          <div className='Nav'>
-          <Link to={'/Home'}>Home</Link>
+          <Link to={'/'}>Home</Link>
           <Link to={'/PuppyRoster'}> The Pups</Link>
           <Link to={'/NewPuppyForm'}>Add A Puppy</Link>
            <div> 
@@ -39,7 +39,7 @@ function App() {
          </div>
 
         <Routes>
-          <Route path='/Home' element= {<Home/>}/>
+          <Route path='/' element= {<Home/>}/>
           <Route path='/PuppyRoster' element = { <AllPuppies allPuppies={allPuppies} setAllPuppies = {setAllPuppies}/>} />
           <Route path='/PuppyRoster/singlePuppy/:id' element = {<SinglePuppy allPuppies={allPuppies} />}/>
           <Route path='/NewPuppyForm' element ={<AddPuppyForm allPuppies = {allPuppies} setAllPuppies={setAllPuppies}/>}/>
