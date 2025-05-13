@@ -1,4 +1,3 @@
-import AllPuppies from "./allPuppies"
 
 function Home(){
     return (
