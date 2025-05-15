@@ -6,12 +6,13 @@ import AllPuppies from './Components/AllPuppies'
 import SinglePuppy from './Components/singlePuppy'
 import AddPuppyForm from './Components/AddPuppyForm'
 import SearchPuppy from './Components/SearchPuppy'
+import SearchResults from './Components/SearchResults'
 import { Routes,Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 function App() {
   const [allPuppies,setAllPuppies] = useState([])
-  
+  const[searchForPuppy,setSearchForPuppy] = useState([])
 
 
   useEffect( () => {
@@ -34,7 +35,7 @@ function App() {
           <Link to={'/PuppyRoster'}> The Pups</Link>
           <Link to={'/NewPuppyForm'}>Add A Puppy</Link>
            <div> 
-            <SearchPuppy allPuppies={allPuppies}/>
+            <SearchPuppy path = '/PuppyRoster/search'  allPuppies={allPuppies} setSearchForPuppy={setSearchForPuppy}/>
           </div>
          </div>
 
@@ -43,6 +44,7 @@ function App() {
           <Route path='/PuppyRoster' element = { <AllPuppies allPuppies={allPuppies} setAllPuppies = {setAllPuppies}/>} />
           <Route path='/PuppyRoster/singlePuppy/:id' element = {<SinglePuppy allPuppies={allPuppies} />}/>
           <Route path='/NewPuppyForm' element ={<AddPuppyForm allPuppies = {allPuppies} setAllPuppies={setAllPuppies}/>}/>
+          <Route path='/PuppyRoster/search/searchResults/:name' element={<SearchResults setSearchForPuppy = {setSearchForPuppy} searchForPuppy={searchForPuppy}/>}/>
         </Routes>
       </div>
   )

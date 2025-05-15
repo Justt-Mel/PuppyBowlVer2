@@ -2,13 +2,12 @@ import { useNavigate } from 'react-router-dom';
 import './pup.css'
 import axios from 'axios';
 
-
 function AddPuppyForm({allPuppies,setAllPuppies}){
     const navigate = useNavigate();
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
-        addPuppy(formData);
+        await addPuppy(formData);
         navigate('/PuppyRoster');
     }
 
@@ -23,7 +22,7 @@ function AddPuppyForm({allPuppies,setAllPuppies}){
             }
             const {data} = await axios.post("https://fsa-puppy-bowl.herokuapp.com/api/2501-PUPPIES/players", newPuppy)
             console.log(data)
-            setAllPuppies([...allPuppies, data.data.player])
+            setAllPuppies([...allPuppies, data.data.newPlayer])
             }
          catch (error) {
             console.error("Error adding puppy:", error);
@@ -31,11 +30,10 @@ function AddPuppyForm({allPuppies,setAllPuppies}){
         }
     }
 
-
     return (
         <div>
             <h1>Adding puppy</h1>
-            <form onSubmit={handleSubmit} className="PupForm" action = {addPuppy}>
+            <form onSubmit={handleSubmit} className="PupForm">
                 <label>
                     Dog's Name:  <input type="text" name="name" required/>
                 </label>
@@ -49,7 +47,7 @@ function AddPuppyForm({allPuppies,setAllPuppies}){
                 </label>
                 <br/>
                  <label>
-                    Dog's Photo: <input type="string" name="imageUrl"/>
+                    Dog's Photo: <input type="url" name="imageUrl"/>
                 </label>
                 <br />
                 <label>
@@ -64,4 +62,5 @@ function AddPuppyForm({allPuppies,setAllPuppies}){
         </div>
     )
 }
+
 export default AddPuppyForm

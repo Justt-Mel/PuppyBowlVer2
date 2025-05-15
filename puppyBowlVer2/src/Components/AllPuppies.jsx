@@ -19,7 +19,6 @@ const deletePup = async (id) => {
             <h1>All The Pups</h1>
             <div className="PupsContainer">
                 {
-                    
                    allPuppies.map((pups) => {
                         return(
                         <div key={pups.id} className="pupObjects">
